@@ -4,7 +4,7 @@ show_whiptail_dialog() {
     whiptail --title "$1" --yesno "$2" 10 60
 }
 
-mensaje_inicio="Hola, bienvenido a PHPTerm.\nEste programa le ayudará a instalar y configurar PHPTerm.\nPara continuar, pulsa en continuar, si por lo contr$"
+mensaje_inicio="Hola, bienvenido a PHPTerm.\nEste programa le ayudará a instalar y configurar PHPTerm.\nPara continuar, pulsa en continuar, si por lo contrario quiere cerrar el instalador, dabe a Cancelar"
 
 show_whiptail_dialog "PHPTerm Instalador" "$mensaje_inicio"
 
@@ -36,7 +36,7 @@ WantedBy=multi-user.target" | sudo tee /etc/systemd/system/phpterm.service > /de
         sudo systemctl enable phpterm
         sudo systemctl start phpterm
 
-        mensaje_final="PHPTerm instalado y configurado correctamente.\nEl servicio se está ejecutando en http://localhost:9000\nSi desea desinstalar este programa, ejecute curl https://raw.githubusercontent.com/Danucosukosuko/EmuTerm/main/install.sh | bash
+        mensaje_final="PHPTerm instalado y configurado correctamente.\nEl servicio se está ejecutando en http://localhost:9000\nSi desea desinstalar este programa, ejecute curl https://raw.githubusercontent.com/Danucosukosuko/EmuTerm/main/install.sh | bash"
         show_whiptail_dialog "Instalación Completa" "$mensaje_final"
     else
         echo "El programa ha sido cancelado."
