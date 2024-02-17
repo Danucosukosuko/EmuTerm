@@ -36,7 +36,7 @@ WantedBy=multi-user.target" | sudo tee /etc/systemd/system/phpterm.service > /de
         sudo systemctl enable phpterm
         sudo systemctl start phpterm
 
-        mensaje_final="PHPTerm instalado y configurado correctamente.\nEl servicio se está ejecutando en http://localhost:9000"
+        mensaje_final="PHPTerm instalado y configurado correctamente.\nEl servicio se está ejecutando en http://localhost:9000\nSi desea desinstalar este programa, ejecute curl https://raw.githubusercontent.com/Danucosukosuko/EmuTerm/main/install.sh | bash
         show_whiptail_dialog "Instalación Completa" "$mensaje_final"
     else
         echo "El programa ha sido cancelado."
