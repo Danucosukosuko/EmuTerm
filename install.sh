@@ -38,6 +38,19 @@ WantedBy=multi-user.target" | sudo tee /etc/systemd/system/phpterm.service > /de
 
         mensaje_final="PHPTerm instalado y configurado correctamente.\nEl servicio se está ejecutando en http://localhost:9000\nDesea que el servicio PHPTerm se autoinicie?"
         show_whiptail_dialog "Instalación Completa" "$mensaje_final"
+                echo "[Unit]
+Description=Servicio PHPTerm
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/php -S 0.0.0.0:9000 -t /home/$(whoami)/PHPTerm
+Restart=always
+
+[Install]
+WantedBy=multi-user.target" | sudo tee /etc/systemd/system/phpterm.service > /dev/null
+
+        sudo systemctl enable phpterm
+        sudo systemctl start phpterm
     else
         echo "El programa ha sido cancelado."
         exit 1
