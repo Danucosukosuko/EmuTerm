@@ -7,3 +7,4 @@ Ejecuta `curl https://raw.githubusercontent.com/Danucosukosuko/EmuTerm/main/inst
 
 Al darle enter, deberá mostrarte esto:
 
+![image](https://github.com/Danucosukosuko/EmuTerm/assets/71569318/8aecd291-1e67-4df9-b943-afae343f463e)
