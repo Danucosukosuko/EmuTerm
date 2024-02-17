@@ -1,7 +1,7 @@
 #!/bin/bash
 
 show_whiptail_dialog() {
-    whiptail --title "$1" --msgbox "$2" 10 60
+    whiptail --title "$1" --yesno "$2" 10 60
 }
 
 mensaje_inicio="Hola, bienvenido a PHPTerm.\nEste programa le ayudará a instalar y configurar PHPTerm.\nPara continuar, pulsa en continuar, si por lo contr$"
