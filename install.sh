@@ -8,6 +8,20 @@ show_whiptail_msgbox() {
     whiptail --title "$1" --msgbox "$2" 10 60
 }
 
+# Función para la animación de inicio
+animate_loading() {
+    local chars="/-\|"
+    local delay=0.1
+    for ((i = 0; i < 30; i++)); do
+        printf "Iniciando Instalador %s\r" "${chars:i % 4:1}"
+        sleep "$delay"
+    done
+    printf "\n"
+}
+
+# Iniciar animación durante 3 segundos
+(animate_loading) & sleep 3
+
 mensaje_inicio="Hola, bienvenido a PHPTerm.\nEste programa le ayudará a instalar y configurar PHPTerm.\nPara continuar, pulsa en continuar, si por lo contrario quiere cerrar el instalador, dabe a Cancelar"
 
 show_whiptail_yesno "PHPTerm Instalador" "$mensaje_inicio"
