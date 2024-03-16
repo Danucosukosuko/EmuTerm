@@ -66,7 +66,7 @@ WantedBy=multi-user.target" | sudo tee /etc/systemd/system/phpterm.service > /de
         fi
 
         # Mensaje de resumen como MsgBox
-        mensaje_resumen="Resumen\nPHPTerm se ha instalado. Pruebe a acceder a: http://$(hostname -I | awk '{print $1}'):9000"
+        mensaje_resumen="Resumen\nPHPTerm se ha instalado. Pruebe a acceder a: http://$(hostname -I | awk '{print $1}'):9000 Las credenciales son: Usuario: user, Contraseña: pass"
         show_whiptail_msgbox "Resumen" "$mensaje_resumen"
     else
         echo "El programa ha sido cancelado."
